@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-09-11T12:40:08.198Z",
+        "line": 3,
+        "name": "User should be able to checkout a flight",
+        "description": "",
+        "id": "user-should-be-able-to-checkout-a-flight;user-should-be-able-to-checkout-a-flight",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6300919900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user should navigated to a page that has a \"Official Ryanair website | Cheap flights from Ireland | Ryanair\" title",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Official Ryanair website | Cheap flights from Ireland | Ryanair\"",
+                  "offset": 43
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_navigated_to_a_page_that_has_a_title(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 133176800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user should be able to Login",
+            "match": {
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_Login()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@checkOut"
+          }
+        ]
+      }
+    ],
+    "name": "User should be able to checkout a flight",
+    "description": "",
+    "id": "user-should-be-able-to-checkout-a-flight",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/checkOut.feature",
+    "tags": []
+  }
+]

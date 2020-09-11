@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/Features",
         glue = "com/RyanAir/StepDefs",
-        dryRun = true,
-        tags = ""
+        dryRun = false,
+        tags = "@checkOut"
 )
 public class runner {
 
