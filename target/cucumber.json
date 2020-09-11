@@ -3,17 +3,39 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-09-11T12:40:08.198Z",
+        "start_timestamp": "2020-09-11T16:20:19.052Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7670391500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.RyanAir.StepDefs.Hooks.setUp()"
+            }
+          }
+        ],
         "line": 3,
         "name": "User should be able to checkout a flight",
         "description": "",
         "id": "user-should-be-able-to-checkout-a-flight;user-should-be-able-to-checkout-a-flight",
+        "after": [
+          {
+            "result": {
+              "duration": 997700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.RyanAir.StepDefs.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 6300919900,
+              "duration": 24932700,
               "status": "passed"
             },
             "line": 4,
@@ -31,7 +53,7 @@
           },
           {
             "result": {
-              "duration": 133176800,
+              "duration": 907028400,
               "status": "passed"
             },
             "line": 5,
@@ -40,6 +62,98 @@
               "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_Login()"
             },
             "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 887649900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user should be able to select departure city \"Barcelona\" and airport \"Barcelona\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Barcelona\"",
+                  "offset": 45
+                },
+                {
+                  "val": "\"Barcelona\"",
+                  "offset": 69
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_select_departure_city_and_airport(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 210243000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user should be able to select destination city \"Ireland\" and airport \"Dublin\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Ireland\"",
+                  "offset": 47
+                },
+                {
+                  "val": "\"Dublin\"",
+                  "offset": 69
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_select_destination_city_and_airport(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 477232300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user select the flight date \"2020-09-26\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"2020-09-26\"",
+                  "offset": 28
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_select_the_flight_date(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 204258100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user can select type of passangers \"3 Adults\",\"1 Teens\",\"2 Children\",\" 0 Infant\" and click the seach button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"3 Adults\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"1 Teens\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"2 Children\"",
+                  "offset": 56
+                },
+                {
+                  "val": "\" 0 Infant\"",
+                  "offset": 69
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_can_select_type_of_passangers_and_click_the_seach_button(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
           }
         ],
         "tags": [

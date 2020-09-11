@@ -3,6 +3,7 @@ package com.RyanAir.Pages;
 import com.RyanAir.Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.Iterator;
@@ -13,6 +14,12 @@ public class HomePage {
     public HomePage() {
         PageFactory.initElements(Driver.get(), this);
     }
+
+    @FindBy(xpath = "(//*[@autocomplete='email'])[2]")
+    public WebElement email;
+
+    @FindBy(xpath = "(//*[@autocomplete='password'])")
+    public WebElement password;
 
     public  WebElement headerMenu(String moduleName) {
 
