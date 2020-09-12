@@ -39,5 +39,11 @@ public class FlightPage extends HomePage {
     @FindBy(xpath = "//*[text()=' Search ']")
     public WebElement searchButton;
 
+    @FindBy(xpath = "((//*[@data-ref='FR 6874'])[1]/div/div)[1]")
+    public WebElement ticket;
+
+    @FindBy(css = "[id='glyphs.close']")
+    public WebElement cookie;
+
 
 }

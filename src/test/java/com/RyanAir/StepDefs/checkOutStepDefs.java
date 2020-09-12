@@ -1,5 +1,6 @@
 package com.RyanAir.StepDefs;
 
+import com.RyanAir.Pages.CheckOutPage;
 import com.RyanAir.Pages.FlightPage;
 import com.RyanAir.Pages.HomePage;
 import com.RyanAir.Utilities.ConfigurationReader;
@@ -7,14 +8,21 @@ import com.RyanAir.Utilities.Driver;
 import com.RyanAir.Utilities.ShortCuts;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class checkOutStepDefs {
 
     HomePage hp=new HomePage();
     FlightPage fp=new FlightPage();
     Actions actions=new Actions(Driver.get());
+    CheckOutPage cop=new CheckOutPage();
+    Random rnd=new Random();
 
 
     @Given("user should navigated to a page that has a {string} title")
@@ -61,7 +69,7 @@ public class checkOutStepDefs {
         int infantNum=Integer.parseInt(Infant.replaceAll("[\\D]", ""));
 
 
-        for(int i=0; i<adultNum;i++){
+        for(int i=0; i<adultNum-1;i++){
             fp.Adults.click();
         }
         for(int i=0; i<teensNum;i++){
@@ -77,4 +85,69 @@ public class checkOutStepDefs {
           fp.searchButton.click();
 
     }
+
+    @Given("user should select the ticket")
+    public void user_should_select_the_ticket() {
+        fp.cookie.click();
+
+           ShortCuts.scroll();
+
+
+          fp.ticket.click();
+          ShortCuts.staticWait(2);
+    }
+
+
+    @When("user enter the informations {string} {string} {string} and click continue button")
+    public void user_enter_the_informations_and_click_continue_button(String title, String firstName, String lastName) {
+
+        ShortCuts.scroll();
+
+        cop.flightTypeValue.click();
+        cop.title(title);
+        cop.fullName(firstName,lastName);
+        cop.continueButton.click();
+    }
+
+    @Then("user should select the seat preferance {string}")
+    public void user_should_select_the_seat_preferance(String seatPreferance) {
+
+        switch (seatPreferance){
+            case "Extra Legroom":
+               int seatNumVIP= rnd.nextInt(27);
+               for (int i=0; i<5; i++){
+
+                   try {
+                       cop.seatList.get(seatNumVIP).click();
+                   }catch (Exception e){
+                       cop.seatList.get(seatNumVIP+1).click();
+                   }
+
+               }
+
+                break;
+
+            case "Standard":
+                int seatNumStandard=(int)(Math.random() * (181 - 28 + 1) + 181);
+                for (int i=0; i<5; i++){
+
+                    try {
+                        cop.seatList.get(seatNumStandard).click();
+                    }catch (Exception e){
+                        cop.seatList.get(seatNumStandard+1).click();
+                    }
+
+                }
+
+                break;
+
+            default:
+                throw new  ElementNotInteractableException("The number that generated is not exist in this plane");
+
+        }
+
+        cop.continueButton.click();
+        cop.noThanksButton.click();
+    }
+
 }
