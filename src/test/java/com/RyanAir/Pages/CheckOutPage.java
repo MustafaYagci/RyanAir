@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CheckOutPage extends HomePage {
 
-    @FindBy(xpath = "//*[text()='Continue with Value fare']")
+    @FindBy(xpath = "//*[text()=' Value ']/../.")
     public WebElement flightTypeValue;
 
     public void title (String gender){

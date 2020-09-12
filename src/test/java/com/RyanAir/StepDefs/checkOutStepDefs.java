@@ -12,6 +12,8 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -23,6 +25,7 @@ public class checkOutStepDefs {
     Actions actions=new Actions(Driver.get());
     CheckOutPage cop=new CheckOutPage();
     Random rnd=new Random();
+    WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
 
 
     @Given("user should navigated to a page that has a {string} title")
@@ -89,21 +92,17 @@ public class checkOutStepDefs {
     @Given("user should select the ticket")
     public void user_should_select_the_ticket() {
         fp.cookie.click();
-
-           ShortCuts.scroll();
-
-
-          fp.ticket.click();
-          ShortCuts.staticWait(2);
+        ShortCuts.scroll();
+        fp.ticket.click();
+        ShortCuts.staticWait(2);
+        cop.flightTypeValue.click();
     }
 
 
     @When("user enter the informations {string} {string} {string} and click continue button")
     public void user_enter_the_informations_and_click_continue_button(String title, String firstName, String lastName) {
 
-        ShortCuts.scroll();
 
-        cop.flightTypeValue.click();
         cop.title(title);
         cop.fullName(firstName,lastName);
         cop.continueButton.click();

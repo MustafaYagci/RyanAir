@@ -5,7 +5,7 @@ Feature: User should be able to checkout a flight
     And user should be able to Login
     Then user should be able to select departure city "Spain" and airport "Barcelona"
     And user should be able to select destination city "Ireland" and airport "Dublin"
-    When user select the flight date "2020-09-26"
+    When user select the flight date "2020-09-30"
     Then user can select type of passangers "1 Adults","0 Teens","0 Children","0 Infant" and click the seach button
     Given user should select the ticket
     When user enter the informations "Mr" "Mustafa" "Yagci" and click continue button
