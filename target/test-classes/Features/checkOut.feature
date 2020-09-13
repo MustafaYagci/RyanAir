@@ -10,5 +10,11 @@ Feature: User should be able to checkout a flight
     Given user should select the ticket
     When user enter the informations "Mr" "Mustafa" "Yagci" and click continue button
     Then user should select the seat preferance "Extra Legroom"
+    And user should select the small bag
+    Given user should be able to click basket
+    Then user should be able to select country code and type phone number
+
+
+
 
 

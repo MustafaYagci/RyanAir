@@ -35,4 +35,6 @@ public class HomePage {
         return header.get(counter);
     }
 
+    @FindBy(xpath = "(//*[@iconid='glyphs/circle-tick'])[1]")
+    public WebElement chartButton;
 }

@@ -42,4 +42,11 @@ public class ShortCuts {
         System.out.println("Tryed to Scroll");
     }
 
+    public static void scrollCondition(WebElement element){
+        WebDriverWait wait=new WebDriverWait(Driver.get(), 10);
+        while (!wait.until(ExpectedConditions.textToBePresentInElement(element,"Spain (+34)"))){
+            ShortCuts.scroll();
+        }
+    }
+
 }

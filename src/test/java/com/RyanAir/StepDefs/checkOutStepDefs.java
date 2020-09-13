@@ -1,11 +1,10 @@
 package com.RyanAir.StepDefs;
 
-import com.RyanAir.Pages.CheckOutPage;
-import com.RyanAir.Pages.FlightPage;
-import com.RyanAir.Pages.HomePage;
+import com.RyanAir.Pages.*;
 import com.RyanAir.Utilities.ConfigurationReader;
 import com.RyanAir.Utilities.Driver;
 import com.RyanAir.Utilities.ShortCuts;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -26,6 +25,9 @@ public class checkOutStepDefs {
     CheckOutPage cop=new CheckOutPage();
     Random rnd=new Random();
     WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
+    LuggagePage lp=new LuggagePage();
+    PaymentPage pp=new PaymentPage();
+    Faker faker=new Faker();
 
 
     @Given("user should navigated to a page that has a {string} title")
@@ -91,11 +93,16 @@ public class checkOutStepDefs {
 
     @Given("user should select the ticket")
     public void user_should_select_the_ticket() {
+
+
         fp.cookie.click();
         ShortCuts.scroll();
         fp.ticket.click();
-        ShortCuts.staticWait(2);
+        ShortCuts.staticWait(10);
+
+
         cop.flightTypeValue.click();
+
     }
 
 
@@ -147,6 +154,33 @@ public class checkOutStepDefs {
 
         cop.continueButton.click();
         cop.noThanksButton.click();
+    }
+
+    @Then("user should select the small bag")
+    public void user_should_select_the_small_bag() {
+        lp.smallBag.click();
+        ShortCuts.scroll();
+        ShortCuts.scroll();
+        ShortCuts.scroll();
+        lp.continueButton.click();
+        ShortCuts.scroll();
+        lp.continueButton.click();
+    }
+
+    @Given("user should be able to click basket")
+    public void user_should_be_able_to_click_basket() {
+        hp.chartButton.click();
+        lp.checkOut.click();
+    }
+
+    @Then("user should be able to select country code and type phone number")
+    public void user_should_be_able_to_select_country_code_and_type_phone_number() {
+          pp.countryCodeButton.click();
+          actions.moveToElement(pp.firstInCountryCode).perform();
+          ShortCuts.scrollCondition(pp.spainCode);
+          pp.spainCode.click();
+          pp.phoneNumberBox.click();
+          pp.phoneNumberBox.sendKeys(faker.phoneNumber().phoneNumber());
     }
 
 }
