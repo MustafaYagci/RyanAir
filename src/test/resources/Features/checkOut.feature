@@ -12,7 +12,8 @@ Feature: User should be able to checkout a flight
     Then user should select the seat preferance "Extra Legroom"
     And user should select the small bag
     Given user should be able to click basket
-    Then user should be able to select country code and type phone number
+    Then user should be able to select country code and type phone number "600296046"
+    And user should insert credit card informations
 
 
 

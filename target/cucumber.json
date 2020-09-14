@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-09-13T17:58:54.621Z",
+        "start_timestamp": "2020-09-14T20:14:20.956Z",
         "before": [
           {
             "result": {
-              "duration": 7447537800,
+              "duration": 8282200400,
               "status": "passed"
             },
             "match": {
@@ -22,9 +22,8 @@
         "after": [
           {
             "result": {
-              "error_message": "java.lang.RuntimeException: Unexpected result for screenshot command: null\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:304)\r\n\tat com.RyanAir.StepDefs.Hooks.tearDown(Hooks.java:28)\r\n",
-              "duration": 109707100,
-              "status": "failed"
+              "duration": 998600,
+              "status": "passed"
             },
             "match": {
               "location": "com.RyanAir.StepDefs.Hooks.tearDown(io.cucumber.java.Scenario)"
@@ -36,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 53855100,
+              "duration": 67816900,
               "status": "passed"
             },
             "line": 4,
@@ -54,7 +53,7 @@
           },
           {
             "result": {
-              "duration": 918025200,
+              "duration": 1258651700,
               "status": "passed"
             },
             "line": 5,
@@ -66,7 +65,7 @@
           },
           {
             "result": {
-              "duration": 974066900,
+              "duration": 1128595800,
               "status": "passed"
             },
             "line": 6,
@@ -88,7 +87,7 @@
           },
           {
             "result": {
-              "duration": 232399100,
+              "duration": 270298700,
               "status": "passed"
             },
             "line": 7,
@@ -110,7 +109,7 @@
           },
           {
             "result": {
-              "duration": 447317500,
+              "duration": 512491700,
               "status": "passed"
             },
             "line": 8,
@@ -128,7 +127,7 @@
           },
           {
             "result": {
-              "duration": 57844900,
+              "duration": 69813800,
               "status": "passed"
             },
             "line": 9,
@@ -158,7 +157,7 @@
           },
           {
             "result": {
-              "duration": 2431625300,
+              "duration": 4182178400,
               "status": "passed"
             },
             "line": 10,
@@ -170,9 +169,8 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@type\u003d\u0027button\u0027]\"}\n  (Session info: chrome\u003d85.0.4183.102)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-J6C5QTC\u0027, ip: \u0027192.168.1.137\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002714.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\\Users\\musta\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55967}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 890b3f37b6900d24a8d6b22762c2494d\n*** Element info: {Using\u003dxpath, value\u003d//button[@type\u003d\u0027button\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat com.RyanAir.Pages.CheckOutPage.title(CheckOutPage.java:17)\r\n\tat com.RyanAir.StepDefs.checkOutStepDefs.user_enter_the_informations_and_click_continue_button(checkOutStepDefs.java:113)\r\n\tat ✽.user enter the informations \"Mr\" \"Mustafa\" \"Yagci\" and click continue button(file:///C:/Users/musta/IdeaProjects/RyanAir/src/test/resources/Features/checkOut.feature:11)\r\n",
-              "duration": 10062755100,
-              "status": "failed"
+              "duration": 972380100,
+              "status": "passed"
             },
             "line": 11,
             "name": "user enter the informations \"Mr\" \"Mustafa\" \"Yagci\" and click continue button",
@@ -197,7 +195,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 6554892500,
+              "status": "passed"
             },
             "line": 12,
             "name": "user should select the seat preferance \"Extra Legroom\"",
@@ -214,7 +213,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5234859700,
+              "status": "passed"
             },
             "line": 13,
             "name": "user should select the small bag",
@@ -225,7 +225,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 828090000,
+              "status": "passed"
             },
             "line": 14,
             "name": "user should be able to click basket",
@@ -236,14 +237,33 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3210719900,
+              "status": "passed"
             },
             "line": 15,
-            "name": "user should be able to select country code and type phone number",
+            "name": "user should be able to select country code and type phone number \"600296046\"",
             "match": {
-              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_select_country_code_and_type_phone_number()"
+              "arguments": [
+                {
+                  "val": "\"600296046\"",
+                  "offset": 65
+                }
+              ],
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_be_able_to_select_country_code_and_type_phone_number(java.lang.String)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1423780800,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user should insert credit card informations",
+            "match": {
+              "location": "com.RyanAir.StepDefs.checkOutStepDefs.user_should_insert_credit_card_informations()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [

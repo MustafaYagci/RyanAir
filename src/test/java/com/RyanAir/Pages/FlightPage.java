@@ -1,6 +1,7 @@
 package com.RyanAir.Pages;
 
 import com.RyanAir.Utilities.Driver;
+import com.RyanAir.Utilities.ShortCuts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,7 @@ public class FlightPage extends HomePage {
     }
 
     public void departureDate(String date){
+        ShortCuts.waitTillVisibility( Driver.get().findElement(By.xpath("//div[@data-id='"+date+"']")));
         Driver.get().findElement(By.xpath("//div[@data-id='"+date+"']")).click();
     }
 

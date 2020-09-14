@@ -4,6 +4,7 @@ import com.RyanAir.Pages.*;
 import com.RyanAir.Utilities.ConfigurationReader;
 import com.RyanAir.Utilities.Driver;
 import com.RyanAir.Utilities.ShortCuts;
+import com.github.javafaker.CreditCardType;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -96,11 +97,9 @@ public class checkOutStepDefs {
 
 
         fp.cookie.click();
-        ShortCuts.scroll();
+        ShortCuts.scrollCondition(fp.ticket);
         fp.ticket.click();
-        ShortCuts.staticWait(10);
-
-
+        ShortCuts.waitTillVisibility(cop.flightTypeValue);
         cop.flightTypeValue.click();
 
     }
@@ -109,7 +108,7 @@ public class checkOutStepDefs {
     @When("user enter the informations {string} {string} {string} and click continue button")
     public void user_enter_the_informations_and_click_continue_button(String title, String firstName, String lastName) {
 
-
+        ShortCuts.waitTillVisibility(cop.continueButton);
         cop.title(title);
         cop.fullName(firstName,lastName);
         cop.continueButton.click();
@@ -170,20 +169,41 @@ public class checkOutStepDefs {
 
     @Given("user should be able to click basket")
     public void user_should_be_able_to_click_basket() {
-        wait.until(ExpectedConditions.elementToBeClickable(hp.chartButton));
+        //wait.until(ExpectedConditions.elementToBeClickable(hp.chartButton));
         hp.chartButton.click();
         wait.until(ExpectedConditions.elementToBeClickable(lp.checkOut));
         lp.checkOut.click();
     }
 
-    @Then("user should be able to select country code and type phone number")
-    public void user_should_be_able_to_select_country_code_and_type_phone_number() {
+    @Then("user should be able to select country code and type phone number {string}")
+    public void user_should_be_able_to_select_country_code_and_type_phone_number(String phoneNumber) {
           pp.countryCodeButton.click();
           actions.moveToElement(pp.firstInCountryCode).perform();
           ShortCuts.scrollCondition(pp.spainCode);
           pp.spainCode.click();
           pp.phoneNumberBox.click();
-          pp.phoneNumberBox.sendKeys(faker.phoneNumber().phoneNumber());
+          pp.phoneNumberBox.sendKeys(phoneNumber);
+
+    }
+
+    @Then("user should insert credit card informations")
+    public void user_should_insert_credit_card_informations() {
+        ShortCuts.scrollCondition(pp.cardNumber);
+        ShortCuts.waitTillVisibility(pp.cardNumber);
+        String cardName=faker.finance().creditCard(CreditCardType.VISA);
+        cardName.replaceAll("-","");
+        pp.cardNumber.sendKeys("4366 8220 5304 3441");
+        pp.ccv.sendKeys("155");
+        pp.cardHolderName.sendKeys("Marge Wolff");
+        pp.adressLine.sendKeys(faker.address().streetAddress());
+        pp.cityName.sendKeys(faker.address().cityName());
+        pp.country.sendKeys("Spain"+Keys.ENTER);
+        pp.zipCode.sendKeys(faker.address().zipCode());
+        pp.yearDropDown.click();
+        pp.setYearDropDown(2026);
+        pp.monthDropDown.click();
+        pp.setMonthDropDown("June");
+
 
     }
 
