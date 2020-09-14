@@ -165,11 +165,14 @@ public class checkOutStepDefs {
         lp.continueButton.click();
         ShortCuts.scroll();
         lp.continueButton.click();
+        ShortCuts.staticWait(2);
     }
 
     @Given("user should be able to click basket")
     public void user_should_be_able_to_click_basket() {
+        wait.until(ExpectedConditions.elementToBeClickable(hp.chartButton));
         hp.chartButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(lp.checkOut));
         lp.checkOut.click();
     }
 
@@ -181,6 +184,7 @@ public class checkOutStepDefs {
           pp.spainCode.click();
           pp.phoneNumberBox.click();
           pp.phoneNumberBox.sendKeys(faker.phoneNumber().phoneNumber());
+
     }
 
 }

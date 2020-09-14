@@ -44,7 +44,8 @@ public class ShortCuts {
 
     public static void scrollCondition(WebElement element){
         WebDriverWait wait=new WebDriverWait(Driver.get(), 10);
-        while (!wait.until(ExpectedConditions.textToBePresentInElement(element,"Spain (+34)"))){
+        String name = element.getText();
+        while (!wait.until(ExpectedConditions.textToBePresentInElement(element,name))){
             ShortCuts.scroll();
         }
     }
