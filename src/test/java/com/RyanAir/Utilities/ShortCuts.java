@@ -34,12 +34,8 @@ public class ShortCuts {
     }
 
     public static void scroll(){
-
-        System.out.println("Trying to Scroll");
         JavascriptExecutor jse = (JavascriptExecutor)Driver.get();
         jse.executeScript("window.scrollBy(0,250)");
-
-        System.out.println("Tryed to Scroll");
     }
 
     public static void scrollCondition(WebElement element){

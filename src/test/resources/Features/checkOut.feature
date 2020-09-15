@@ -5,7 +5,7 @@ Feature: User should be able to checkout a flight
     And user should be able to Login
     Then user should be able to select departure city "Spain" and airport "Barcelona"
     And user should be able to select destination city "Ireland" and airport "Dublin"
-    When user select the flight date "2020-09-30"
+    When user select the flight date "2020-09-29"
     Then user can select type of passangers "1 Adults","0 Teens","0 Children","0 Infant" and click the seach button
     Given user should select the ticket
     When user enter the informations "Mr" "Mustafa" "Yagci" and click continue button
@@ -14,6 +14,7 @@ Feature: User should be able to checkout a flight
     Given user should be able to click basket
     Then user should be able to select country code and type phone number "600296046"
     And user should insert credit card informations
+    Then user should get error message "Transaction could not be processed. Your payment was not authorised therefore we could not complete your booking. Please ensure that the information was correct and try again or use a new payment card."
 
 
 

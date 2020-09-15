@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class PaymentPage extends HomePage {
 
+    @FindBy(xpath = "//*[@id='insurance-opt-out']/../div[1]")
+    public WebElement noInsurance;
+
     @FindBy(xpath = "(//*[contains(text(),'+353')])[1]/../..")
     public WebElement countryCodeButton;
 
@@ -47,6 +50,15 @@ public class PaymentPage extends HomePage {
     @FindBy(xpath = "//*[text()='Month']/..")
     public WebElement monthDropDown;
 
+    @FindBy(xpath = "//*[@id='termsAndConditions']/../div[1]")
+    public WebElement termsCondition;
+
+    @FindBy(xpath = "(//*[contains(text(),'Currency')][1]/..//button)[1]")
+    public WebElement currencyDropdown;
+
+    @FindBy(xpath = "//*[contains(text(),' Pay now ')]")
+    public WebElement payNowButton;
+
     public void setYearDropDown(int year){
         if (year>2020 && year<2030){
             String yearString = year+"";
@@ -63,6 +75,10 @@ public class PaymentPage extends HomePage {
         WebElement monthElement=Driver.get().findElement(By.xpath("//*[text()='"+month+"']/.."));
         ShortCuts.scrollCondition(monthElement);
         monthElement.click();
+    }
+
+    public void setCurrencyDropdown(String currencyType){
+        Driver.get().findElement(By.xpath("//*[contains(text(),'"+currencyType+"')]")).click();
     }
 
 

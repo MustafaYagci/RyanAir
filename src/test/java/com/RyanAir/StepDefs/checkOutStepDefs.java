@@ -63,6 +63,7 @@ public class checkOutStepDefs {
 
     @When("user select the flight date {string}")
     public void user_select_the_flight_date(String date) {
+
         fp.departureDate(date);
     }
 
@@ -188,6 +189,7 @@ public class checkOutStepDefs {
 
     @Then("user should insert credit card informations")
     public void user_should_insert_credit_card_informations() {
+        pp.noInsurance.click();
         ShortCuts.scrollCondition(pp.cardNumber);
         ShortCuts.waitTillVisibility(pp.cardNumber);
         String cardName=faker.finance().creditCard(CreditCardType.VISA);
@@ -203,7 +205,15 @@ public class checkOutStepDefs {
         pp.setYearDropDown(2026);
         pp.monthDropDown.click();
         pp.setMonthDropDown("June");
+        ShortCuts.scroll();
+        pp.termsCondition.click();
+        pp.currencyDropdown.click();
+        pp.setCurrencyDropdown("EUR");
+        pp.payNowButton.click();
+    }
 
+    @Then("user should get error message {string}")
+    public void user_should_get_error_message(String expectedErrorMessage) {
 
     }
 
