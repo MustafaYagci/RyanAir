@@ -16,10 +16,7 @@ import org.junit.runner.RunWith;
 )
 public class runner {
 
-//This line writen from InteliJ
-// This line writen from GitHub application by itself.
-        //Hello
-        //Huseyin branch inden yazildi
+
 
 
 }
