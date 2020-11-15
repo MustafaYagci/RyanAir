@@ -15,7 +15,10 @@ import org.junit.runner.RunWith;
         tags = "@checkOut"
 )
 public class runner {
+
 //This line writen from InteliJ
+// This line writen from GitHub application by itself.
+
 
 
 }
